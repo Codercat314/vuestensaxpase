@@ -1,47 +1,59 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <h1>Sten sax påse</h1>
   </header>
 
   <main>
-    <TheWelcome />
+    <div class="knapprad" >
+<button>sten</button>
+<button>sax</button>
+<button>påse</button>
+    </div>
+    <div class="resultat">
+      <p id="resultat">du vann</p>
+    </div>
+    <div class="score">
+      <p>
+        <span id="spelare">0</span> - <span id="dator">0</span>
+      </p>
+    </div>
   </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
+  header{
+    text-align: center;
+    margin-bottom: 1.2em;
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+  }
+  button{
+    padding: .6em 1.2em;
+    font-size: 1.2em;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
 
-@media (min-width: 1024px) {
-  header {
+
+  }
+  .knapprad{
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+    justify-content: center;
+    gap: .6em;
 
-  .logo {
-    margin: 0 2rem 0 0;
   }
+  .resultat {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 1.2em;
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
   }
-}
+  .score{
+    font-size: 1.2em;
+    text-align: center;
+  }
 </style>
