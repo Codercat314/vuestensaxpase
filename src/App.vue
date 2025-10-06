@@ -1,32 +1,9 @@
 <script setup>
 import { ref } from 'vue'
-
+import KnappRad from './components/KnappRad.vue'
+const knappar = ref(['Sten', 'Sax', 'Påse', 'Spock', 'Lizard'])
 const score = ref({ spelare: 0, dator: 0 })
 const resultat = ref('Du vann!')
-
-function spelarval(e) {
-  let buttons = document.getElementsByClassName('alternativ')
-  for (let b of buttons) {
-    b.classList.remove('spelarval')
-  }
-  e.target.classList.add('spelarval')
-  datorval()
-}
-
-function datorval() {
-  let val = Math.floor(Math.random() * 3)
-  let alternativ = ['Sten', 'Sax', 'Påse']
-  let buttons = document.getElementsByClassName('alternativ')
-  for (let b of buttons) {
-    b.classList.remove('datorval')
-    b.title = ''
-    if (b.textContent == alternativ[val]) {
-      b.classList.add('datorval')
-      b.title = 'Datorns val'
-    }
-  }
-  hittaVinnare()
-}
 
 function hittaVinnare() {
   let buttons = document.getElementsByClassName('alternativ')
@@ -72,11 +49,8 @@ function reset() {
   </header>
 
   <main>
-    <div class="knapprad">
-      <button class="alternativ" @click="spelarval">Sten</button>
-      <button class="alternativ" @click="spelarval">Sax</button>
-      <button class="alternativ" @click="spelarval">Påse</button>
-    </div>
+    <KnappRad :knappar="knappar" />
+
     <div class="resultat">
       <p id="resultat">{{ resultat }}</p>
     </div>
@@ -94,6 +68,7 @@ header {
   text-align: center;
   margin-bottom: 1.2em;
 }
+/*
 button {
   padding: 0.6em 1.2em;
   font-size: 1.2em;
@@ -107,6 +82,7 @@ button {
   justify-content: center;
   gap: 0.6em;
 }
+  */
 .resultat {
   font-size: 1.2em;
   text-align: center;
