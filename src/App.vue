@@ -76,5 +76,7 @@ button {
   margin-top: 2em;
   padding: 0.3em 0.6em;
   font-size: 0.8em;
+  display: block;
+  margin: auto;
 }
 </style>
